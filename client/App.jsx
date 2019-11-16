@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -8,9 +7,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <h3>React Is Live!</h3>
+      <div>React Is Live!</div>
     );
   }
 }
 
-export default App
+export default App;
