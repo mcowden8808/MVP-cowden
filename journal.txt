@@ -1,0 +1,10 @@
+Goals:
+
+1. Create list of recipes
+
+2. Add functionality that allows recipes to display recipe cards on click
+
+
+
+
+X. Add form functionality that takes in ingredients and returns recipes that include those ingredients.
