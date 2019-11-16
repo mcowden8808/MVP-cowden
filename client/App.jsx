@@ -6,25 +6,8 @@ class App extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    fetch("http://localhost:8000")
-      .then(res => res.json())
-      .then(
-        data => {
-          console.log(data);
-          this.setState({
-            data: data
-          });
-        },
-        error => {
-          this.setState({
-            error
-          });
-        }
-      );
-  }
-
   render() {
+
     return (
       <div>
         <RecipeList />

@@ -1,28 +1,22 @@
-const webpack = require('webpack');
-const path = require('path');
+var path = require('path');
+var SRC_DIR = path.join(__dirname, './client');
+var DIST_DIR = path.join(__dirname, './public');
 
 module.exports = {
-  mode: "development",
-  target: "web",
-  entry: {
-    app: `./client/Index.jsx`
-  },
+  entry: `${SRC_DIR}/index.jsx`,
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
+    path: DIST_DIR
   },
-  module: {
-    rules: [
+  module : {
+    loaders : [
       {
-        test: /\.jsx?/,
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/preset-env", "@babel/preset-react"]
-        }
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        test : /\.jsx?/,
+        include : SRC_DIR,
+        loader : 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+       }
       }
     ]
   }

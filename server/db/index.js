@@ -18,11 +18,12 @@ const recipeSchema = mongoose.Schema({
   ingredients: String
 })
 
-
 const Recipe = mongoose.model("Recipe", recipeSchema)
 
 const selectAll = function(cb) {
+  console.log('got here')
   Recipe.find({}, function(err, recipe) {
+    console.log(recipe)
     if (err) {
       cb(err, null)
     } else {
@@ -31,6 +32,42 @@ const selectAll = function(cb) {
   })
 }
 
-module.exports = {
-  selectAll
+const insert = function (recipeAdded, callback) {
+  Recipe.create(recipeAdded, function (err, success) {
+      if (err) {
+          callback(err, null)
+      } else {
+          callback(null, success)
+      }
+  });
 }
+
+const deleteOne = function(recipeDeleted, cb) {
+  Recipe.deleteOne(recipeDeleted, function (err, success) {
+    if (err) {
+      cb(err, null)
+    } else {
+      cb(null, success)
+    }
+  })
+}
+
+module.exports = {
+  selectAll,
+  insert,
+  deleteOne
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
