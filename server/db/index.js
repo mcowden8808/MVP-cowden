@@ -21,9 +21,9 @@ const recipeSchema = mongoose.Schema({
 const Recipe = mongoose.model("Recipe", recipeSchema)
 
 const selectAll = function(cb) {
-  console.log('got here')
+  // console.log('got here')
   Recipe.find({}, function(err, recipe) {
-    console.log(recipe)
+    // console.log(recipe)
     if (err) {
       cb(err, null)
     } else {

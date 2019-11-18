@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
-import RecipeCards from "./RecipeCards.jsx";
+import RecipeCard from "./RecipeCards.jsx";
+import Recipe from "./Recipe.jsx";
+import Instructions from "./Instructions.jsx";
+import Ingredients from "./Ingredients.jsx";
 
 class RecipeList extends React.Component {
   constructor(props) {
@@ -12,19 +15,16 @@ class RecipeList extends React.Component {
 
   async componentDidMount() {
     let res = await axios.get("/recipes");
-    console.log(res)
     this.setState({ recipes: res.data });
   }
 
   render() {
-    let recipeList = this.state.recipes.map((recipe, index) => {
-      <RecipeList key={index} recipe={recipe} />
-    })
+    let recipeList = this.state.recipes.map((recipe, index) => (
+      <RecipeCard recipe={recipe} key={index} />
+    ));
 
     return (
-      <div>
-        {recipeList}
-      </div>
+        <div>{recipeList}</div>
     );
   }
 }

@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
 app.get('/recipes', (req, res) => {
-  console.log('got here2')
+  // console.log('got here2')
   selectAll((err, recipeData) => {
     if (err) {
       res.status(500).send(err);

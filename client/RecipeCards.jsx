@@ -1,15 +1,20 @@
 import React from "react";
+import Instructions from "./Instructions.jsx";
+import Ingredients from "./Ingredients.jsx";
 
-class RecipeCards extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  // render() {
-  //   return (
-
-  //   )
-  // }
+export default (props) => {
+  return (
+    <div>
+      <h4>
+        {props.recipe.name}
+      </h4>
+      <h4>
+        {props.recipe.instructions}
+      </h4>
+      <h4>
+        {props.recipe.ingredients}
+      </h4>
+    </div>
+  )
 }
 
-export default RecipeCards;
