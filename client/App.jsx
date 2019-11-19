@@ -1,6 +1,7 @@
 import React from "react";
 // import RecipeList from "./components/RecipeList.jsx";
 import Form from "./components/Form.jsx";
+import Recipes from "./components/Recipes.jsx"
 
 const API_KEY = "65f0f403d7b805da6d9898ede31488e6";
 const APP_ID = "0be42a5c";
@@ -30,12 +31,10 @@ class App extends React.Component {
     return (
       <div className="app">
         <header className="app-header">
-          <h1 className="app-title">Hunger Helper</h1>
+          <h1 className="app-title">Recipe Finder</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
-        {this.state.recipeArr.map(recipe => {
-          return <p key={ recipe.recipe.url }>{recipe.recipe.label}</p>;
-        })}
+        <Recipes recipes={this.state.recipeArr}/>
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App.jsx";
-import Bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+import RecipeRouter from "./components/Router.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render (
-  <App />, document.getElementById('app')
+  <RecipeRouter />, document.getElementById('app')
 );

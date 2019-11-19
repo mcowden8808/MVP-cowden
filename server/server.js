@@ -12,18 +12,23 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
 
-app.get('/recipes', (req, res) => {
-  // console.log('got here2')
-  selectAll((err, recipeData) => {
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'), function(err) {
     if (err) {
       res.status(500).send(err);
-    } else {
-      res.json(recipeData);
     }
   })
+  // console.log('got here2')
+  // selectAll((err, recipeData) => {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   } else {
+  //     res.json(recipeData);
+  //   }
+  // })
 })
 
-app.post('/recipes', (req, res) => {
+app.post('/', (req, res) => {
   insert(req.body, (err, success) => {
       if (err) {
           res.status(500).json({ success: false })
@@ -33,7 +38,7 @@ app.post('/recipes', (req, res) => {
   })
 })
 
-app.delete('/recipes', (req, res) => {
+app.delete('/', (req, res) => {
   deleteOne(req.body, (err, success) => {
     if (err) {
       res.status(500).json({ success: false })
