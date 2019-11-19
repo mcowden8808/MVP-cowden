@@ -8,20 +8,21 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR
   },
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
-        test : /\.jsx?/,
-        include : SRC_DIR,
-        loader : 'babel-loader',
+        test: /\.jsx?/,
+        include: SRC_DIR,
+        loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015']
-       }
+          presets: ['react', 'es2015'],
+          plugins: ["transform-class-properties"]
+        },
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
-      }
+  test: /\.css$/i,
+    use: ["style-loader", "css-loader"]
+}
     ]
   }
 };

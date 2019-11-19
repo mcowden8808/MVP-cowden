@@ -24,7 +24,7 @@ class App extends React.Component {
 
     const data = await api_call.json();
     this.setState({ recipeArr: data.hits });
-    console.log(this.state.recipeArr);
+    // console.log(this.state.recipeArr);
   }
 
   render() {
