@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import RecipeCard from "./RecipeCards.jsx";
 import Recipe from "./Recipe.jsx";
-import Instructions from "./Instructions.jsx";
-import Ingredients from "./Ingredients.jsx";
+// import Instructions from "./Instructions.jsx";
+// import Ingredients from "./Ingredients.jsx";
 
 class RecipeList extends React.Component {
   constructor(props) {
