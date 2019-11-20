@@ -27,11 +27,24 @@ class App extends React.Component {
     // console.log(this.state.recipeArr);
   }
 
+  // componentDidMount = () => {
+  //   const json = localstorage.getItem("recipes");
+  //   const recipes = JSON.parse(json);
+  //   if (localStorage.getItem("recipes") !== null) {
+  //     this.setState({ recipesArr: recipes })
+  //   }
+  // }
+
+  // componentDidUpdate = () => {
+  //   const recipes = JSON.stringify(this.state.recipeArr);
+  //   localStorage.setItem("recipes", recipes);
+  // }
+
   render() {
     return (
-      <div className="app">
-        <header className="app-header">
-          <h1 className="app-title">Recipe Finder</h1>
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Recipe Finder</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
         <Recipes recipes={this.state.recipeArr}/>

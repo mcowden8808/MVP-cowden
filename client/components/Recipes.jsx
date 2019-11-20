@@ -8,9 +8,9 @@ const Recipes = props => (
       let recipe_id = Math.floor(recipe.recipe.calories);
       return (
         <div key={recipe.recipe.url}>
-          <img src={recipe.recipe.image} alt={recipe.recipe.label}></img>
-          <p>{recipe.recipe.label}</p>
-          <button>
+          <img className="recipe__box-img" src={recipe.recipe.image} alt={recipe.recipe.label}></img>
+          <p className="recipes__title">{recipe.recipe.label}</p>
+          <button className="recipe_buttons">
             <Link
               to={{
                 pathname: `/recipe/${recipe_id}`,
