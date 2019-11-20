@@ -27,19 +27,6 @@ class App extends React.Component {
     // console.log(this.state.recipeArr);
   }
 
-  // componentDidMount = () => {
-  //   const json = localstorage.getItem("recipes");
-  //   const recipes = JSON.parse(json);
-  //   if (localStorage.getItem("recipes") !== null) {
-  //     this.setState({ recipesArr: recipes })
-  //   }
-  // }
-
-  // componentDidUpdate = () => {
-  //   const recipes = JSON.stringify(this.state.recipeArr);
-  //   localStorage.setItem("recipes", recipes);
-  // }
-
   render() {
     return (
       <div className="App">
