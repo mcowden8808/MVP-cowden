@@ -23,13 +23,10 @@ class Recipe extends React.Component {
     this.setState({ image: response.hits[0].recipe.image, title: response.hits[0].recipe.label, publisher: response.hits[0].recipe.source, url: response.hits[0].recipe.url })
     console.log(response.hits[0].recipe)
     // console.log(response)
-    // console.log(this.state.activeRecipe)
-    // console.log(this.state.activeRecipe.recipe.image)
   }
 
   render() {
     // console.log(this.props)
-    // const recipeActive = this.state.activeRecipe;
     console.log(this.state.image)
     return (
       <div className="container">
